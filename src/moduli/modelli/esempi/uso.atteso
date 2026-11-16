@@ -1,0 +1,27 @@
+[oggetto]
+Sollecito: F-118 F-121 in scadenza
+[html]
+<p>Gentile Rossi &amp; &lt;Figli&gt;,</p><ul><li>F-118: 250,00 €</li><li>F-121: 90,50 €</li></ul><p>Scadenza: 30 novembre 2026</p>
+[testo]
+Gentile Rossi & <Figli>,
+- F-118: 250,00 €
+- F-121: 90,50 €
+Scadenza: 30 novembre 2026
+
+In francese (ripiego sull'italiano): Sollecito: F-118 F-121 in scadenza
+
+Salvata la versione 1; avvisi:
+- Segnaposto non previsto: {{codice_cliente}}
+- La parte «html» inserisce valori senza escape HTML ({{{…}}} o {{&…}}): solo per testo HTML già sicuro.
+Oggetto attuale: Promemoria per Rossi & <Figli>
+Errore: Parte «testo»: Segnaposto non chiuso (riga 2, colonna 6); posizione nelle proprietà: 2:6
+Errore: Parte «testo»: Elemento di Mustache non ammesso nei modelli del portale (parziali, blocchi o delimitatori) (riga 1, colonna 11); posizione nelle proprietà: 1:11
+Errore: Parte «testo»: Sezione «fatture» non chiusa (riga 1, colonna 1); posizione nelle proprietà: 1:1
+
+Dopo il ripristino: Sollecito: F-118 F-121 in scadenza
+versione 2 di admin: Ripristino del modello predefinito
+versione 1 di admin: Testo più breve
+
+Anteprima: Gentile Maria Bianchi,
+- F-1: 120,00 €
+Scadenza: 30 novembre 2026

@@ -1,0 +1,6 @@
+Politica dei contenuti: default-src 'none'; img-src data:; font-src data:; style-src 'unsafe-inline'
+Regole di pagina: @page{size:A4;margin:25mm 15mm 20mm 15mm;
+Titolo con escape: Presenze: Sicurezza &lt;informatica&gt;
+PDF: inizia con %PDF-, pagine: 3
+QR: Nessun generatore di codici QR disponibile (TCPDF o qrencode).
+Salute: buono, Impaginazione di prova riuscita.

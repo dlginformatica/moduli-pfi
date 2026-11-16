@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/esportazione",
+    "versione": "1.0.0",
+    "descrizione": "Esportazione di tabelle in CSV, TSV, testo delimitato e a larghezza fissa, XLSX, ODS, DOCX, ODT, RTF, PDF, HTML, JSON, XML e Markdown.",
+    "spazio": "Pfi\\Esportazione\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0"},
+    "salute": []
+}

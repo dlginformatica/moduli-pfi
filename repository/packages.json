@@ -1,0 +1,388 @@
+{
+  "packages": {
+    "pfi/backup": {
+      "1.0.0": {
+        "name": "pfi/backup",
+        "description": "Backup e ripristino granulari: database PostgreSQL, cartelle, configurazione cifrata, impronte, manifesto, conservazione per numero e giorni, destinazioni in cartella o in archivi compatibili S3.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "ext-sodium": "*",
+          "ext-curl": "*",
+          "ext-simplexml": "*",
+          "pfi/contratti": "^1.0"
+        },
+        "require-dev": {
+          "pfi/registro": "^1.0"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Backup\\": "src/"
+          }
+        },
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-backup-1.0.0.zip",
+          "shasum": "f87005fc56b0dc3db7c222e26a0b4b0e5d183f03"
+        }
+      }
+    },
+    "pfi/comunicazione": {
+      "1.0.0": {
+        "name": "pfi/comunicazione",
+        "description": "Comunicazione multicanale: posta con SMTP o con le API di Microsoft Graph, Gmail, Amazon SES, SendGrid, Mailgun, Brevo e Postmark, Telegram, WhatsApp, coda con tentativi e registro degli invii.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "ext-openssl": "*",
+          "ext-mbstring": "*",
+          "pfi/contratti": "^1.0",
+          "pfi/connettori": "^1.0",
+          "pfi/modelli": "^1.0"
+        },
+        "require-dev": {
+          "pfi/registro": "^1.0"
+        },
+        "suggest": {
+          "ext-intl": "indirizzi di posta con domini internazionalizzati"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Comunicazione\\": "src/"
+          }
+        },
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-comunicazione-1.0.0.zip",
+          "shasum": "bddb21de4b5ae8428e36b3d4c16181a9df171b85"
+        }
+      }
+    },
+    "pfi/connettori": {
+      "1.0.0": {
+        "name": "pfi/connettori",
+        "description": "Client HTTP comune verso i servizi esterni: tentativi, limiti di frequenza, tempi massimi, proxy dell'ente, registro senza segreti, fornitore finto per le prove.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "ext-curl": "*",
+          "pfi/contratti": "^1.0"
+        },
+        "require-dev": {
+          "pfi/registro": "^1.0"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Connettori\\": "src/"
+          }
+        },
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-connettori-1.0.0.zip",
+          "shasum": "0adc3d68e2c5077cbe566aaf26ed7876567e95ec"
+        }
+      }
+    },
+    "pfi/contratti": {
+      "1.0.0": {
+        "name": "pfi/contratti",
+        "description": "Interfacce comuni dei moduli universali del portale di autoformazione: registro, segreti, prove di salute, manifesto, versioni e caricatore.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Contratti\\": "src/"
+          }
+        },
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-contratti-1.0.0.zip",
+          "shasum": "5727bddefdf8e88022d3e19a5e39fa5c3fa8f3cb"
+        }
+      }
+    },
+    "pfi/diagnostica": {
+      "1.0.0": {
+        "name": "pfi/diagnostica",
+        "description": "Esecuzione delle prove di salute dei moduli universali con stato complessivo e rapporti in JSON per il monitoraggio e in Markdown.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "pfi/contratti": "^1.0"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Diagnostica\\": "src/"
+          }
+        },
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-diagnostica-1.0.0.zip",
+          "shasum": "b1ee60c9d89cc157527329ebf5390a7f5e9c10f2"
+        }
+      }
+    },
+    "pfi/esecutore": {
+      "1.0.0": {
+        "name": "pfi/esecutore",
+        "description": "Esecutore privilegiato: coda delle richieste fra le pagine e il servizio di sistema, elenco chiuso delle operazioni ammesse con parametri controllati, esecuzione senza shell con tempo massimo e registro.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "ext-posix": "*",
+          "pfi/contratti": "^1.0"
+        },
+        "suggest": {
+          "pfi/registro": "registro delle operazioni nel servizio pfi-esecutore"
+        },
+        "require-dev": {
+          "pfi/registro": "^1.0"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Esecutore\\": "src/"
+          }
+        },
+        "bin": [
+          "bin/pfi-esecutore"
+        ],
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-esecutore-1.0.0.zip",
+          "shasum": "3a45c0b9638b1ae44da6f4cd7a850ac7237e836f"
+        }
+      }
+    },
+    "pfi/esportazione": {
+      "1.0.0": {
+        "name": "pfi/esportazione",
+        "description": "Esportazione di tabelle in CSV, TSV, testo delimitato e a larghezza fissa, XLSX, ODS, DOCX, ODT, RTF, PDF, HTML, JSON, XML e Markdown, riga per riga.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "ext-mbstring": "*",
+          "ext-zip": "*",
+          "ext-iconv": "*",
+          "pfi/contratti": "^1.0"
+        },
+        "suggest": {
+          "pfi/stampa": "formato PDF"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Esportazione\\": "src/"
+          }
+        },
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-esportazione-1.0.0.zip",
+          "shasum": "c93f5f97290cb85b4932c22336b2e17245d20fc6"
+        }
+      }
+    },
+    "pfi/gestore": {
+      "1.0.0": {
+        "name": "pfi/gestore",
+        "description": "Gestione dei moduli universali: versioni, dipendenze, salute, aggiornamento e ritorno indietro di un singolo modulo da pacchetti firmati con Ed25519.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "ext-sodium": "*",
+          "pfi/contratti": "^1.0",
+          "pfi/diagnostica": "^1.0"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Gestore\\": "src/"
+          }
+        },
+        "bin": [
+          "bin/pfi-moduli",
+          "bin/pfi-salute-modulo"
+        ],
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-gestore-1.0.0.zip",
+          "shasum": "888b85bc4d25e039d16a967f8f5d0a1706383e32"
+        }
+      }
+    },
+    "pfi/modelli": {
+      "1.0.0": {
+        "name": "pfi/modelli",
+        "description": "Modelli di testo con la sintassi di Mustache senza logica: segnaposto dichiarati, verifica, anteprima, varianti per canale e lingua, versioni con ripristino.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "ext-mbstring": "*",
+          "pfi/contratti": "^1.0"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Modelli\\": "src/"
+          }
+        },
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-modelli-1.0.0.zip",
+          "shasum": "ed8d4ef44280706e5d1174855714a89f2107d5d2"
+        }
+      }
+    },
+    "pfi/registro": {
+      "1.0.0": {
+        "name": "pfi/registro",
+        "description": "Registro degli eventi compatibile con PSR-3: mascheramento dei segreti, correlazione, destinazioni tabella, file con rotazione e syslog RFC 5424 su UDP, TCP e TLS.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "pfi/contratti": "^1.0"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Registro\\": "src/"
+          }
+        },
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-registro-1.0.0.zip",
+          "shasum": "8ef35ad278067fc41b73b7e4c7047088f2a16f58"
+        }
+      }
+    },
+    "pfi/segreti": {
+      "1.0.0": {
+        "name": "pfi/segreti",
+        "description": "Deposito cifrato dei segreti (credenziali, chiavi, token) con impronta, rotazione della chiave e prova di salute; compatibile con il deposito della release 8.0 del portale.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "ext-sodium": "*",
+          "pfi/contratti": "^1.0"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Segreti\\": "src/"
+          }
+        },
+        "version": "1.0.0",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-segreti-1.0.0.zip",
+          "shasum": "0f9bb6a6f3938cab1563df159cecdd9e5f19d526"
+        }
+      }
+    },
+    "pfi/stampa": {
+      "1.0.1": {
+        "name": "pfi/stampa",
+        "description": "Stampa in PDF con i modelli: impostazioni di pagina, intestazione e piè di pagina con i numeri di pagina, codici QR generati in locale, Chromium senza interfaccia senza risorse esterne.",
+        "type": "library",
+        "license": "GPL-3.0-or-later",
+        "authors": [
+          {
+            "name": "Gaetano Giarrusso"
+          }
+        ],
+        "require": {
+          "php": ">=8.2",
+          "pfi/contratti": "^1.0",
+          "pfi/modelli": "^1.0",
+          "pfi/esportazione": "^1.0"
+        },
+        "suggest": {
+          "tecnickcom/tcpdf": "codici QR (presente in Moodle); in alternativa il programma qrencode"
+        },
+        "autoload": {
+          "psr-4": {
+            "Pfi\\Stampa\\": "src/"
+          }
+        },
+        "version": "1.0.1",
+        "dist": {
+          "type": "zip",
+          "url": "file:///D:/Claude.portale.corsi.it/moduli-pfi/repository/dist/pfi-stampa-1.0.1.zip",
+          "shasum": "a9525256d26140108eb4dcc747dfd9da919bbaee"
+        }
+      }
+    }
+  }
+}

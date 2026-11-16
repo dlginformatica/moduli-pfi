@@ -1,0 +1,42 @@
+Formati disponibili: csv, csv_pv, tsv, xlsx, ods, docx, odt, rtf, html, json, xml, md
+
+--- csv: 3 righe, tipo text/csv
+(inizia con il BOM UTF-8)
+Dipendente,Corso,Ore,Completato,Data
+"Rossi, Mario","Sicurezza ""base""",4.5,1,2026-11-10T00:00:00+00:00
+Bianchi Anna,Excel avanzato,12,0,
+"'=HYPERLINK(""http://example.org"")",Prova di formula,-3,0,2026-11-12T00:00:00+00:00
+
+
+--- md: 3 righe, tipo text/markdown
+# Presenze ai corsi
+
+| Dipendente | Corso | Ore | Completato | Data |
+|---|---|---|---|---|
+| Rossi, Mario | Sicurezza "base" | 4.5 | 1 | 2026-11-10T00:00:00+00:00 |
+| Bianchi Anna | Excel avanzato | 12 | 0 |  |
+| =HYPERLINK("http://example.org") | Prova di formula | -3 | 0 | 2026-11-12T00:00:00+00:00 |
+
+
+--- json: 3 righe, tipo application/json
+[
+{"Dipendente":"Rossi, Mario","Corso":"Sicurezza \"base\"","Ore":4.5,"Completato":true,"Data":"2026-11-10T00:00:00+00:00"},
+{"Dipendente":"Bianchi Anna","Corso":"Excel avanzato","Ore":12,"Completato":false,"Data":null},
+{"Dipendente":"=HYPERLINK(\"http://example.org\")","Corso":"Prova di formula","Ore":-3,"Completato":false,"Data":"2026-11-12T00:00:00+00:00"}
+]
+
+--- csv_gestionale: «Città» in Windows-1252 occupa 5 byte; file di 227 byte
+--- fisso:
+Dipendente       Corso                OreCompData                      
+Rossi, Mario     Sicurezza "base"     4.5   12026-11-10T00:00:00+00:00 
+Bianchi Anna     Excel avanzato        12   0                          
+=HYPERLINK("http:Prova di formula      -3   02026-11-12T00:00:00+00:00 
+
+xlsx: archivio con 6 parti, la prima è «[Content_Types].xml»
+ods: archivio con 3 parti, la prima è «mimetype»
+docx: archivio con 3 parti, la prima è «[Content_Types].xml»
+odt: archivio con 3 parti, la prima è «mimetype»
+
+pdf: l'impaginatore ha ricevuto una tabella HTML con 4 righe <tr>
+Errore: Formato di esportazione sconosciuto: «xls»
+Errore: Riga 1: 1 valori per 5 colonne.

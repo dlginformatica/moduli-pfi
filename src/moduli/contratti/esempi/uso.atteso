@@ -1,0 +1,7 @@
+1.4.2 soddisfa ^1.0           sì
+1.4.2 soddisfa ~1.3           sì
+1.4.2 soddisfa >=1.0 <1.4     no
+1.4.2 soddisfa ^2.0 || ^1.4   sì
+Requisiti mancanti di pfi/fatture: manca pfi/registro («^1.0»)
+Prova fatture.cartella: buono (Cartella scrivibile)
+Livello numerico di 'warning': 4

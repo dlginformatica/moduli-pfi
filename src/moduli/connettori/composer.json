@@ -1,0 +1,10 @@
+{
+    "name": "pfi/connettori",
+    "description": "Client HTTP comune verso i servizi esterni: tentativi, limiti di frequenza, tempi massimi, proxy dell'ente, registro senza segreti, fornitore finto per le prove.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "ext-curl": "*", "pfi/contratti": "^1.0"},
+    "require-dev": {"pfi/registro": "^1.0"},
+    "autoload": {"psr-4": {"Pfi\\Connettori\\": "src/"}}
+}

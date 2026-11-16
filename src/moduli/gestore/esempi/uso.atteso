@@ -1,0 +1,24 @@
+Pacchetti: contratti-1.0.0.tar.gz, saluti-1.0.0.tar.gz, saluti-1.1.0.tar.gz, diagnostica-1.0.0.tar.gz, saluti-1.2.0.tar.gz, saluti-2.0.0.tar.gz (ciascuno con il file .firma)
+Installato pfi/contratti 1.0.0
+Installato pfi/diagnostica 1.0.0
+Installato pfi/saluti 1.0.0
+Installato pfi/saluti 1.1.0
+  pfi/contratti: in uso 1.0.0, presenti 1.0.0
+  pfi/diagnostica: in uso 1.0.0, presenti 1.0.0
+  pfi/saluti: in uso 1.1.0, presenti 1.1.0, 1.0.0
+Collegamento attuale di pfi/saluti: 1.1.0
+Scostamenti dalla combinazione collaudata: {"pfi\/saluti":["1.1.0","1.0.0"]}
+Aggiornamento a 1.2.0: pfi/saluti 1.2.0: prova di salute guasta (saluti.archivio: Archivio dei saluti non raggiungibile); rimessa in uso la versione 1.1.0.
+Ritorno indietro: in uso 1.0.0
+Dopo la rimozione: 1.2.0, 1.0.0
+dipendenza mancante: pfi/saluti 2.0.0 non installabile: manca pfi/registro («^1.0»).
+altra chiave: Firma del pacchetto non valida: il modulo non si installa.
+archivio alterato: Firma del pacchetto non valida: il modulo non si installa.
+già presente: pfi/saluti 1.0.0 è già presente: per tornarci si usa il ritorno indietro.
+storia: pfi/contratti aggiornato 1.0.0 (prima nessuna): pfi/diagnostica non installato: prove di salute non eseguite.
+storia: pfi/diagnostica aggiornato 1.0.0 (prima nessuna): Nessuna prova di salute dichiarata.
+storia: pfi/saluti aggiornato 1.0.0 (prima nessuna): Nessuna prova di salute dichiarata.
+storia: pfi/saluti aggiornato 1.1.0 (prima 1.0.0): Nessuna prova di salute dichiarata.
+storia: pfi/saluti annullato 1.2.0 (prima 1.1.0): saluti.archivio: Archivio dei saluti non raggiungibile
+storia: pfi/saluti riportato 1.0.0 (prima 1.1.0)
+storia: pfi/saluti eliminata 1.1.0 (prima nessuna)

@@ -1,0 +1,9 @@
+{
+    "name": "pfi/contratti",
+    "description": "Interfacce comuni dei moduli universali del portale di autoformazione: registro, segreti, prove di salute, manifesto, versioni e caricatore.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2"},
+    "autoload": {"psr-4": {"Pfi\\Contratti\\": "src/"}}
+}

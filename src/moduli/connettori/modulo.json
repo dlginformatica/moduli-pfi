@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/connettori",
+    "versione": "1.0.0",
+    "descrizione": "Client HTTP comune verso i servizi esterni con tentativi, limiti di frequenza, proxy e fornitore finto.",
+    "spazio": "Pfi\\Connettori\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0"},
+    "salute": ["Pfi\\Connettori\\Salute\\Raggiungibili"]
+}

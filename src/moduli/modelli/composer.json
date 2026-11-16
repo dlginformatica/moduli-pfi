@@ -1,0 +1,9 @@
+{
+    "name": "pfi/modelli",
+    "description": "Modelli di testo con la sintassi di Mustache senza logica: segnaposto dichiarati, verifica, anteprima, varianti per canale e lingua, versioni con ripristino.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "ext-mbstring": "*", "pfi/contratti": "^1.0"},
+    "autoload": {"psr-4": {"Pfi\\Modelli\\": "src/"}}
+}

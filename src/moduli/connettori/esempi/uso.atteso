@@ -1,0 +1,25 @@
+1. Servizio occupato (503 con Retry-After: 2), poi risposta riuscita
+  (attesa di 2.0 s)
+  [registro info] anagrafe: GET https://api.example.org/v1/utenti/A-17?… → 200 in N ms (2 tentativi)
+  stato 200 al tentativo 2: attivo
+2. POST senza Idempotency-Key con 502: non si ritenta (il servizio potrebbe averla eseguita)
+  [registro error] anagrafe: POST https://api.example.org/v1/pratiche → 502 in N ms (1 tentativi)
+  ErroreConnettore: anagrafe: il servizio ha risposto 502. (stato 502, corpo disponibile: Bad gateway)
+3. Lo stesso POST con Idempotency-Key: si ritenta
+  (attesa di meno di un secondo)
+  [registro info] anagrafe: POST https://api.example.org/v1/pratiche → 201 in N ms (2 tentativi)
+  stato 201, id 99
+4. 404 accettato come risposta (non trovato non è un errore per il chiamante)
+  [registro info] anagrafe: GET https://api.example.org/v1/utenti/X-1 → 404 in N ms (1 tentativi)
+  stato 404
+5. Errore di rete a ogni tentativo
+  (attesa di meno di un secondo)
+  (attesa di meno di un secondo)
+  [registro error] anagrafe: GET https://api.example.org/v1/stato → 0 in N ms (3 tentativi)
+  ErroreConnettore: anagrafe: servizio non raggiungibile (errore di rete 7: connessione rifiutata). (di rete: sì)
+6. Limite di 2 richieste al secondo con un orologio fermo: la terza richiesta deve attendere
+  richiesta 1: stato 204
+  richiesta 2: stato 204
+  (attesa di meno di un secondo)
+  richiesta 3: stato 204
+Richieste ricevute dal fornitore finto nei casi 1-5: 9

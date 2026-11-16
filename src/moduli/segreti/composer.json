@@ -1,0 +1,9 @@
+{
+    "name": "pfi/segreti",
+    "description": "Deposito cifrato dei segreti (credenziali, chiavi, token) con impronta, rotazione della chiave e prova di salute; compatibile con il deposito della release 8.0 del portale.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "ext-sodium": "*", "pfi/contratti": "^1.0"},
+    "autoload": {"psr-4": {"Pfi\\Segreti\\": "src/"}}
+}

@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/esecutore",
+    "versione": "1.0.0",
+    "descrizione": "Esecutore privilegiato con coda, elenco chiuso delle operazioni, parametri controllati e servizio di sistema.",
+    "spazio": "Pfi\\Esecutore\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0"},
+    "salute": ["Pfi\\Esecutore\\Salute\\Coda"]
+}

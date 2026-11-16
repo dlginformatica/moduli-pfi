@@ -1,0 +1,50 @@
+#!/usr/bin/php
+<?php
+// Realizzato con Claude (Anthropic) e altri strumenti di intelligenza artificiale.
+// Copyright 2026 Gaetano Giarrusso. Licenza GPL v3 o successiva (https://www.gnu.org/licenses/gpl-3.0.html).
+//
+// Servizio pfi-esecutore (release 9.0, blocco M2b). Lo avvia systemd come root quando compare una richiesta nella coda
+// (unità .path) o a intervalli; esegue le richieste in coda ed esce.
+// Uso: pfi-esecutore [--coda /var/spool/pfi-esecutore] [--catalogo /etc/pfi/esecutore.json] [--moduli /usr/local/lib/pfi/moduli]
+//      [--registro /var/log/pfi/esecutore.log] [--pulisci GIORNI]
+
+declare(strict_types=1);
+
+$o = getopt('', ['coda:', 'catalogo:', 'moduli:', 'registro:', 'pulisci:']);
+$moduli = $o['moduli'] ?? '/usr/local/lib/pfi/moduli';
+if (posix_geteuid() !== 0) {
+    fwrite(STDERR, "pfi-esecutore va eseguito da root.\n");
+    exit(2);
+}
+$avvio = is_file($moduli . '/contratti/attuale/avvio.php') ? $moduli . '/contratti/attuale/avvio.php' : $moduli . '/contratti/avvio.php';
+require_once($avvio);
+if (is_dir($moduli . '/contratti/attuale')) {
+    \Pfi\Contratti\Caricatore::registra($moduli);
+} else {
+    foreach (glob($moduli . '/*', GLOB_ONLYDIR) as $c) {
+        \Pfi\Contratti\Caricatore::registra_cartella($c);
+    }
+}
+$registro = null;
+if (class_exists(\Pfi\Registro\Registro::class)) {
+    $registro = (new \Pfi\Registro\Registro(new \Pfi\Registro\Mascheratore(), 'pfi/esecutore'))
+        ->aggiungi(new \Pfi\Registro\Destinazioni\File($o['registro'] ?? '/var/log/pfi/esecutore.log'))
+        ->aggiungi(new \Pfi\Registro\Destinazioni\Syslog('locale'), \Pfi\Contratti\Registro::NOTA);
+}
+try {
+    $catalogo = \Pfi\Esecutore\Catalogo::da_file($o['catalogo'] ?? '/etc/pfi/esecutore.json');
+    $esecutore = new \Pfi\Esecutore\Esecutore(new \Pfi\Esecutore\Coda($o['coda'] ?? '/var/spool/pfi-esecutore'), $catalogo, $registro);
+    $fp = fopen('/run/pfi-esecutore.lock', 'c');
+    if (!$fp || !flock($fp, LOCK_EX | LOCK_NB)) {
+        exit(0);
+    }
+    do {
+        $n = $esecutore->elabora();
+    } while ($n > 0);
+    if (isset($o['pulisci'])) {
+        $esecutore->pulisci(max(1, (int) $o['pulisci']));
+    }
+} catch (\Pfi\Contratti\Eccezione $e) {
+    fwrite(STDERR, 'pfi-esecutore: ' . $e->getMessage() . "\n");
+    exit(1);
+}

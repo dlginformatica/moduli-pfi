@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/registro",
+    "versione": "1.0.0",
+    "descrizione": "Registro degli eventi con mascheramento dei segreti, correlazione, tabella, file con rotazione e syslog RFC 5424.",
+    "spazio": "Pfi\\Registro\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0"},
+    "salute": ["Pfi\\Registro\\Salute\\Destinazioni"]
+}

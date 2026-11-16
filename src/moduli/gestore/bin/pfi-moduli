@@ -1,0 +1,46 @@
+#!/usr/bin/php
+<?php
+// Realizzato con Claude (Anthropic) e altri strumenti di intelligenza artificiale.
+// Copyright 2026 Gaetano Giarrusso. Licenza GPL v3 o successiva (https://www.gnu.org/licenses/gpl-3.0.html).
+//
+// Gestione dei moduli universali dal servizio pfi-esecutore (D-162, M7b). Richiede root.
+// Uso: pfi-moduli elenco | installa <archivio.tar.gz> <autore> | indietro <pfi/nome> <autore> [versione] | rimuovi <pfi/nome> <versione>
+// Opzioni da ambiente: PFI_MODULI (predefinito /usr/local/lib/pfi/moduli), PFI_MODULI_CHIAVE (predefinito /etc/pfi/moduli-firma.pub).
+
+declare(strict_types=1);
+
+$base = getenv('PFI_MODULI') ?: '/usr/local/lib/pfi/moduli';
+$chiave = getenv('PFI_MODULI_CHIAVE') ?: '/etc/pfi/moduli-firma.pub';
+require_once "{$base}/contratti/attuale/avvio.php";
+\Pfi\Contratti\Caricatore::registra($base);
+$registro = null;
+if (class_exists(\Pfi\Registro\Registro::class)) {
+    $registro = (new \Pfi\Registro\Registro(new \Pfi\Registro\Mascheratore(), 'pfi/gestore'))
+        ->aggiungi(new \Pfi\Registro\Destinazioni\Syslog('locale'), \Pfi\Contratti\Registro::NOTA);
+}
+try {
+    $g = new \Pfi\Gestore\Gestore($base, trim((string) @file_get_contents($chiave)), $registro);
+    $a = $argv;
+    switch ($a[1] ?? '') {
+        case 'elenco':
+            echo json_encode($g->elenco(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES), "\n";
+            break;
+        case 'installa':
+            $m = $g->installa($a[2] ?? '', $a[3] ?? 'sconosciuto');
+            echo "Installato {$m->nome} {$m->versione}.\n";
+            break;
+        case 'indietro':
+            echo 'In uso ' . ($a[2] ?? '') . ' ' . $g->indietro($a[2] ?? '', $a[3] ?? 'sconosciuto', $a[4] ?? null) . ".\n";
+            break;
+        case 'rimuovi':
+            $g->rimuovi($a[2] ?? '', $a[3] ?? '');
+            echo "Eliminata.\n";
+            break;
+        default:
+            fwrite(STDERR, "Uso: pfi-moduli elenco | installa <archivio> <autore> | indietro <pfi/nome> <autore> [versione] | rimuovi <pfi/nome> <versione>\n");
+            exit(2);
+    }
+} catch (\Pfi\Contratti\Eccezione $e) {
+    fwrite(STDERR, 'pfi-moduli: ' . $e->getMessage() . "\n");
+    exit(1);
+}

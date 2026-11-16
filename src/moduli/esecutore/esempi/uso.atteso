@@ -1,0 +1,12 @@
+Stato appena accodata: in coda
+Richieste trattate dal servizio: 6
+
+saluto normale: eseguita, codice 0, uscita «Ciao Mario Rossi (cordiali saluti)»
+tentativo di iniezione: rifiutata, motivo: Parametro «nome»: formato non ammesso.
+percorso ammesso: eseguita, codice 0, uscita «portale-2026-11-15.tar.zst»
+percorso fuori radice: rifiutata, motivo: Parametro «cartella»: percorso inesistente o fuori dalla cartella ammessa.
+operazione sconosciuta: rifiutata, motivo: Operazione non ammessa: «cancella-tutto».
+tempo massimo superato: interrotta, codice 124, motivo: Tempo massimo di 1 secondi superato.
+
+Controllo nella pagina: Operazione saluta: parametro non ammesso «colore».
+Salute della coda: buono, Coda delle operazioni privilegiate in ordine.

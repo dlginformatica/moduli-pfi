@@ -1,0 +1,40 @@
+Stato complessivo: guasto
+
+| Modulo | Prova | Esito | Messaggio |
+|---|---|---|---|
+| pfi/fatture | Estensioni PHP richieste | buono | Estensioni presenti |
+| pfi/fatture | Il servizio esterno risponde | buono | Risponde |
+| pfi/fatture | Caricamento della prova App\ClasseInesistente | guasto | Prova non caricabile: Class "App\ClasseInesistente" does not exist |
+| pfi/fatture | Prova che lancia un'eccezione | guasto | La prova si è interrotta: RuntimeException |
+
+{
+    "stato": "guasto",
+    "quando": "2026-11-16T09:00:00+01:00",
+    "prove": [
+        {
+            "modulo": "pfi/fatture",
+            "codice": "fatture.php",
+            "stato": "buono",
+            "messaggio": "Estensioni presenti"
+        },
+        {
+            "modulo": "pfi/fatture",
+            "codice": "fatture.servizio",
+            "stato": "buono",
+            "messaggio": "Risponde"
+        },
+        {
+            "modulo": "pfi/fatture",
+            "codice": "diagnostica.caricamento",
+            "stato": "guasto",
+            "messaggio": "Prova non caricabile: Class \"App\\ClasseInesistente\" does not exist"
+        },
+        {
+            "modulo": "pfi/fatture",
+            "codice": "fatture.difettosa",
+            "stato": "guasto",
+            "messaggio": "La prova si è interrotta: RuntimeException"
+        }
+    ]
+}
+Codice di uscita per il monitoraggio: 1

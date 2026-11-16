@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/segreti",
+    "versione": "1.0.0",
+    "descrizione": "Deposito cifrato dei segreti con impronta, rotazione della chiave e prova di salute.",
+    "spazio": "Pfi\\Segreti\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0"},
+    "salute": ["Pfi\\Segreti\\Salute\\Chiave"]
+}

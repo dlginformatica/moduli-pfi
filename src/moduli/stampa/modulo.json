@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/stampa",
+    "versione": "1.0.1",
+    "descrizione": "Stampa in PDF con i modelli: impostazioni di pagina, intestazione e piè di pagina, codici QR locali, Chromium senza interfaccia.",
+    "spazio": "Pfi\\Stampa\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0", "pfi/modelli": "^1.0", "pfi/esportazione": "^1.0"},
+    "salute": ["Pfi\\Stampa\\Salute\\Motore"]
+}

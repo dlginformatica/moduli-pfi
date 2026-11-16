@@ -1,0 +1,10 @@
+{
+    "name": "pfi/gestore",
+    "description": "Gestione dei moduli universali: versioni, dipendenze, salute, aggiornamento e ritorno indietro di un singolo modulo da pacchetti firmati con Ed25519.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "ext-sodium": "*", "pfi/contratti": "^1.0", "pfi/diagnostica": "^1.0"},
+    "autoload": {"psr-4": {"Pfi\\Gestore\\": "src/"}},
+    "bin": ["bin/pfi-moduli", "bin/pfi-salute-modulo"]
+}

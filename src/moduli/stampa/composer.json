@@ -1,0 +1,10 @@
+{
+    "name": "pfi/stampa",
+    "description": "Stampa in PDF con i modelli: impostazioni di pagina, intestazione e piè di pagina con i numeri di pagina, codici QR generati in locale, Chromium senza interfaccia senza risorse esterne.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "pfi/contratti": "^1.0", "pfi/modelli": "^1.0", "pfi/esportazione": "^1.0"},
+    "suggest": {"tecnickcom/tcpdf": "codici QR (presente in Moodle); in alternativa il programma qrencode"},
+    "autoload": {"psr-4": {"Pfi\\Stampa\\": "src/"}}
+}

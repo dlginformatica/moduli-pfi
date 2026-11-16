@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/backup",
+    "versione": "1.0.0",
+    "descrizione": "Backup e ripristino granulari: database, cartelle, configurazione cifrata, impronte, conservazione, destinazioni remote.",
+    "spazio": "Pfi\\Backup\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0"},
+    "salute": ["Pfi\\Backup\\Salute\\Recente"]
+}

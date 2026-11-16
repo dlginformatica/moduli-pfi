@@ -1,0 +1,36 @@
+#!/usr/bin/php
+<?php
+// Realizzato con Claude (Anthropic) e altri strumenti di intelligenza artificiale.
+// Copyright 2026 Gaetano Giarrusso. Licenza GPL v3 o successiva (https://www.gnu.org/licenses/gpl-3.0.html).
+//
+// Prove di salute di un modulo installato, in un processo nuovo che carica le versioni in uso (pfi/gestore, M7b).
+// Uso: pfi-salute-modulo <cartella dei moduli> <pfi/nome>; stampa {"stato": …, "messaggio": …}.
+
+declare(strict_types=1);
+
+[, $base, $nome] = $argv + [1 => '', 2 => ''];
+$esci = function(string $stato, string $msg): never {
+    echo json_encode(['stato' => $stato, 'messaggio' => $msg], JSON_UNESCAPED_UNICODE), "\n";
+    exit(0);
+};
+$contratti = "{$base}/contratti/attuale/avvio.php";
+if (!is_file($contratti)) {
+    $esci('guasto', 'pfi/contratti non installato nella cartella dei moduli.');
+}
+require_once $contratti;
+\Pfi\Contratti\Caricatore::registra($base);
+$moduli = \Pfi\Contratti\Caricatore::moduli();
+if (!isset($moduli[$nome])) {
+    $esci('guasto', "Modulo {$nome} non caricabile.");
+}
+$disponibili = array_map(fn($m) => $m->versione, $moduli);
+$mancanti = $moduli[$nome]->requisiti_mancanti($disponibili);
+if ($mancanti) {
+    $esci('guasto', implode('; ', $mancanti));
+}
+if (!class_exists(\Pfi\Diagnostica\Diagnostica::class)) {
+    $esci('avviso', 'pfi/diagnostica non installato: prove di salute non eseguite.');
+}
+$r = (new \Pfi\Diagnostica\Diagnostica())->da_manifesti([$moduli[$nome]])->esegui();
+$stato = \Pfi\Diagnostica\Diagnostica::stato($r);
+$esci($stato, $r ? implode('; ', array_map(fn($x) => "{$x->codice}: {$x->esito->messaggio}", $r)) : 'Nessuna prova di salute dichiarata.');

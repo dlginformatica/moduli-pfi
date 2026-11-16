@@ -1,0 +1,17 @@
+Invii accodati: 2; trattati dal cron: 2
+Postmark ha ricevuto: From="Ufficio formazione" <formazione@example.org>, To=anna.bianchi@example.org, Subject=Promemoria: Excel avanzato
+  HtmlBody=<p>Gentile Anna,</p><p>la lezione di <b>Excel avanzato</b> è lunedì 23 novembre alle 9:30.</p>
+  TextBody=Gentile Anna, / la lezione di Excel avanzato è lunedì 23 novembre alle 9:30.
+  intestazione di correlazione: X-Pfi-Correlazione=promemoria-2026-11-23
+Telegram ha ricevuto: Excel avanzato: lezione lunedì alle 9:30.
+
+Coda:
+  posta    in_coda   tentativi 1, destinatario pseudonimo di Mario, fornitore «», esito «postmark: invio non riuscito (503)», contenuto conservato per il nuovo tentativo
+  posta    inviato   tentativi 1, destinatario pseudonimo, fornitore «b7bc2f4a-0001», esito «accettato 200», contenuto cancellato
+  telegram inviato   tentativi 1, destinatario pseudonimo, fornitore «4242», esito «accettato 200», contenuto cancellato
+
+Errore: Indirizzo di posta non valido.
+Errore: Canale non configurato: «whatsapp»
+Salute: guasto, Canali di comunicazione con problemi.
+  posta: buono: postmark: credenziali accettate.
+  telegram: guasto: Token di Telegram rifiutato.

@@ -1,0 +1,9 @@
+{
+    "name": "pfi/diagnostica",
+    "description": "Esecuzione delle prove di salute dei moduli universali con stato complessivo e rapporti in JSON per il monitoraggio e in Markdown.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "pfi/contratti": "^1.0"},
+    "autoload": {"psr-4": {"Pfi\\Diagnostica\\": "src/"}}
+}

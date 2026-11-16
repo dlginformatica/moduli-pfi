@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/gestore",
+    "versione": "1.0.0",
+    "descrizione": "Gestione dei moduli universali: versioni, dipendenze, salute, aggiornamento e ritorno indietro di un singolo modulo da pacchetti firmati.",
+    "spazio": "Pfi\\Gestore\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0", "pfi/diagnostica": "^1.0"},
+    "salute": ["Pfi\\Gestore\\Salute\\Dipendenze"]
+}

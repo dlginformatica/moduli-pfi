@@ -1,0 +1,10 @@
+{
+    "name": "pfi/esportazione",
+    "description": "Esportazione di tabelle in CSV, TSV, testo delimitato e a larghezza fissa, XLSX, ODS, DOCX, ODT, RTF, PDF, HTML, JSON, XML e Markdown, riga per riga.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "ext-mbstring": "*", "ext-zip": "*", "ext-iconv": "*", "pfi/contratti": "^1.0"},
+    "suggest": {"pfi/stampa": "formato PDF"},
+    "autoload": {"psr-4": {"Pfi\\Esportazione\\": "src/"}}
+}

@@ -1,0 +1,10 @@
+{
+    "name": "pfi/backup",
+    "description": "Backup e ripristino granulari: database PostgreSQL, cartelle, configurazione cifrata, impronte, manifesto, conservazione per numero e giorni, destinazioni in cartella o in archivi compatibili S3.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "ext-sodium": "*", "ext-curl": "*", "ext-simplexml": "*", "pfi/contratti": "^1.0"},
+    "require-dev": {"pfi/registro": "^1.0"},
+    "autoload": {"psr-4": {"Pfi\\Backup\\": "src/"}}
+}

@@ -1,0 +1,12 @@
+Ultimo backup: 20261115-020000
+File: MANIFESTO.json, RILASCIO, SHA256SUMS, configurazione.tar.gz.cifrato, dati.tar.gz
+Unità nel manifesto: dati, configurazione; rilascio applicazione-2.4.0
+La cache esclusa non è nell'archivio: sì
+Prova di ripristino: dati, configurazione ripristinabili
+Dopo il ripristino: Verbale della riunione; dati sostituiti accantonati in 1 cartella
+rilascio diverso: Il backup viene dal rilascio «applicazione-2.4.0», in servizio c'è «applicazione-2.5.0»: confermare il rilascio diverso.
+file alterato: Impronte non corrispondenti: dati.tar.gz. Il backup non si ripristina.
+chiave sbagliata: Decifratura non riuscita: chiave errata o file alterato.
+Eliminati da una nuova conservazione: nessuno
+Restano in locale: 20261115-020000, 20261114-020000; in remoto: 20261115-020000, 20261114-020000
+Salute: buono, Backup recente e integro.

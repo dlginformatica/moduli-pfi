@@ -1,0 +1,11 @@
+{
+  "sorgente": "MANUALE.md",
+  "sorgente_sha256": "7a18533a70d5d828d674f2e6767e14bd13a6e48f770758ea289a2a77be899e55",
+  "pdf": "MANUALE.pdf",
+  "pdf_sha256": "4bf86cbb4996746fdede3d8d6aeb0b2345ddd906104ecf4b0da87d72dee91307",
+  "versione": "1.0.0",
+  "prodotto_il": "2026-11-16T14:04:11+01:00",
+  "figure": {},
+  "strumento": "tools/documenti.py 1.2.0",
+  "browser": "chrome-headless-shell"
+}

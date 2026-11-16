@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/contratti",
+    "versione": "1.0.0",
+    "descrizione": "Interfacce comuni dei moduli universali: registro, segreti, prove di salute, manifesto, versioni e caricatore.",
+    "spazio": "Pfi\\Contratti\\",
+    "php": ">=8.2",
+    "richiede": {},
+    "salute": []
+}

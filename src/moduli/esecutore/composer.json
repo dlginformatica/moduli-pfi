@@ -1,0 +1,12 @@
+{
+    "name": "pfi/esecutore",
+    "description": "Esecutore privilegiato: coda delle richieste fra le pagine e il servizio di sistema, elenco chiuso delle operazioni ammesse con parametri controllati, esecuzione senza shell con tempo massimo e registro.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "ext-posix": "*", "pfi/contratti": "^1.0"},
+    "suggest": {"pfi/registro": "registro delle operazioni nel servizio pfi-esecutore"},
+    "require-dev": {"pfi/registro": "^1.0"},
+    "autoload": {"psr-4": {"Pfi\\Esecutore\\": "src/"}},
+    "bin": ["bin/pfi-esecutore"]
+}

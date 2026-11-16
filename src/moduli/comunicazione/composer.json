@@ -1,0 +1,11 @@
+{
+    "name": "pfi/comunicazione",
+    "description": "Comunicazione multicanale: posta con SMTP o con le API di Microsoft Graph, Gmail, Amazon SES, SendGrid, Mailgun, Brevo e Postmark, Telegram, WhatsApp, coda con tentativi e registro degli invii.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [{"name": "Gaetano Giarrusso"}],
+    "require": {"php": ">=8.2", "ext-openssl": "*", "ext-mbstring": "*", "pfi/contratti": "^1.0", "pfi/connettori": "^1.0", "pfi/modelli": "^1.0"},
+    "require-dev": {"pfi/registro": "^1.0"},
+    "suggest": {"ext-intl": "indirizzi di posta con domini internazionalizzati"},
+    "autoload": {"psr-4": {"Pfi\\Comunicazione\\": "src/"}}
+}

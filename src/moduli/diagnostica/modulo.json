@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/diagnostica",
+    "versione": "1.0.0",
+    "descrizione": "Esecuzione delle prove di salute dei moduli con stato complessivo e rapporti per il monitoraggio.",
+    "spazio": "Pfi\\Diagnostica\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0"},
+    "salute": []
+}

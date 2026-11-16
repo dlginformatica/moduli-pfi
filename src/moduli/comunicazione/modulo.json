@@ -1,0 +1,9 @@
+{
+    "nome": "pfi/comunicazione",
+    "versione": "1.0.0",
+    "descrizione": "Comunicazione multicanale: posta con SMTP o con le API dei fornitori, Telegram, WhatsApp, coda e registro degli invii.",
+    "spazio": "Pfi\\Comunicazione\\",
+    "php": ">=8.2",
+    "richiede": {"pfi/contratti": "^1.0", "pfi/connettori": "^1.0", "pfi/modelli": "^1.0"},
+    "salute": ["Pfi\\Comunicazione\\Salute\\Canali"]
+}
